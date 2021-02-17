@@ -58,6 +58,8 @@ Be prepared to return to the full group with answers to these questions.
 
 ## Breakout 2: Chromagrams in R
 
+In this breakout group, you will start working with chromagrams in R, and how to 
+
 ### Installing `compmus`
 
 Just once, you need to install the `compmus` package, a special package I wrote for this course to sand off some rough edges in `spotifyr`. You can do so with the following line of code:
@@ -218,7 +220,7 @@ compmus_long_distance(
   scale_fill_viridis_c(guide = NULL)
 ```
 
-### Your turn
+### Instructions
 
 As a group, work through the following steps.
 
@@ -232,7 +234,7 @@ Be prepared to discuss your finding with the larger group at the end of the brea
 
 If you are comfortable with R and want to compute actual DTW alignments instead of just making a visual analysis, look into the R [dtw package][4].
 
-## Warning
+### Warning
 
 The output of `geom_tile()` can be very large if sent through `ggplotly()` and will probably not work for your portfolios. It will either be very slow to load or simply leave a blank space on the page.
 
