@@ -28,7 +28,7 @@ You can access the lecture notes at the following links.
   - Week 10
   - Week 11
 
-This storyboard contains further examples from each week to inspire you.
+This storyboard contains further examples from each week to inspire you. You can download the raw source code [here](./index.rmd).
 
 ### What kind of portfolio do I need to create?
 
