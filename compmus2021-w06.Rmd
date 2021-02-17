@@ -2,7 +2,9 @@
 title: "Meeting Plan · Week 6"
 author: "John Ashley Burgoyne"
 date: "10 February 2021"
-output: html_document
+output: 
+  html_document:
+    theme: flatly
 ---
 
 You can download the raw source code for these lecture notes [here](./compmus2021-w06.Rmd).
