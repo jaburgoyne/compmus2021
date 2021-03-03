@@ -150,7 +150,7 @@ Listen to a little bit of the track and discuss the following questions with you
   - What does the chordogram seem to say? Is Ravi Shankar using particular harmonies?
   - How could we improve Spotify's features to be more appropriate for this style of music?
 
-```{r}
+```{r, echo = FALSE}
 get_tidy_audio_analysis("69Dx6UvoQQfsrKQFEsoh0H") %>%
   compmus_align(bars, segments) %>%
   select(bars) %>%
