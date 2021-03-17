@@ -343,11 +343,10 @@ workout &lt;-
   get_playlist_audio_features(&quot;spotify&quot;, &quot;37i9dQZF1DXaRL7xbcDl7X&quot;) %&gt;%
   slice(1:20) %&gt;%
   add_audio_analysis()</code></pre>
-<p>We bind the three playlists together using the trick from Week 7, transpose the chroma vectors to a common tonic using the <code>compmus_c_transpose</code> function, and then summarise the vectors like we did when generating chromagrams and cepstrograms. Again, Aitchison’s clr transformation can help with chroma.</p>
+<p>We bind the three playlists together using the trick from earlier in the course, transpose the chroma vectors to a common tonic using the <code>compmus_c_transpose</code> function, and then summarise the vectors like we did when generating chromagrams and cepstrograms. Again, Aitchison’s clr transformation can help with chroma.</p>
 <pre class="r"><code>indie &lt;-
-  pop %&gt;%
-  mutate(playlist = &quot;Indie Pop&quot;) %&gt;%
   bind_rows(
+    pop %&gt;% mutate(playlist = &quot;Indie Pop&quot;),
     party %&gt;% mutate(playlist = &quot;Indie Party&quot;),
     workout %&gt;% mutate(playlist = &quot;Indie Workout&quot;)
   ) %&gt;%
@@ -372,7 +371,7 @@ workout &lt;-
   mutate(pitches = map(pitches, compmus_normalise, &quot;clr&quot;)) %&gt;%
   mutate_at(vars(pitches, timbre), map, bind_rows) %&gt;%
   unnest(cols = c(pitches, timbre))</code></pre>
-<p>Although the novelty-based transformations of chroma and timbre features are not always useful for visualisations, they can be very useful for classification (next week). Both ‘deltas’ and ‘delta-deltas’, especially for timbre features, are in regular use in music information retrieval. The code example below shows how to compute average <em>delta</em> chroma and timbre features instead of the ordinary average. Can you incorporate it into the classifiers above? Can you add delta-deltas, too? Can you use a visualisation to find any patterns in the data?</p>
+<p>Although the novelty-based transformations of chroma and timbre features are not always useful for visualisations, they can be very useful for classification (next week). Both ‘deltas’ and ‘delta-deltas’, especially for timbre features, are in regular use in music information retrieval. The code example below shows how to compute average <em>delta</em> chroma and timbre features instead of the ordinary average. Can you add delta-deltas, too? Can you use a visualisation to find any patterns in the data?</p>
 <pre class="r"><code>indie_deltas &lt;-
   pop %&gt;%
   mutate(playlist = &quot;Indie Pop&quot;) %&gt;%

@@ -188,13 +188,12 @@ workout <-
   add_audio_analysis()
 ```
 
-We bind the three playlists together using the trick from Week 7, transpose the chroma vectors to a common tonic using the `compmus_c_transpose` function, and then summarise the vectors like we did when generating chromagrams and cepstrograms. Again, Aitchison's clr transformation can help with chroma.
+We bind the three playlists together using the trick from earlier in the course, transpose the chroma vectors to a common tonic using the `compmus_c_transpose` function, and then summarise the vectors like we did when generating chromagrams and cepstrograms. Again, Aitchison's clr transformation can help with chroma.
 
 ```{r}
 indie <-
-  pop %>%
-  mutate(playlist = "Indie Pop") %>%
   bind_rows(
+    pop %>% mutate(playlist = "Indie Pop"),
     party %>% mutate(playlist = "Indie Party"),
     workout %>% mutate(playlist = "Indie Workout")
   ) %>%
@@ -221,7 +220,7 @@ indie <-
   unnest(cols = c(pitches, timbre))
 ```
 
-Although the novelty-based transformations of chroma and timbre features are not always useful for visualisations, they can be very useful for classification (next week). Both 'deltas' and 'delta-deltas', especially for timbre features, are in regular use in music information retrieval. The code example below shows how to compute average *delta* chroma and timbre features instead of the ordinary average. Can you incorporate it into the classifiers above? Can you add delta-deltas, too? Can you use a visualisation to find any patterns in the data?
+Although the novelty-based transformations of chroma and timbre features are not always useful for visualisations, they can be very useful for classification (next week). Both 'deltas' and 'delta-deltas', especially for timbre features, are in regular use in music information retrieval. The code example below shows how to compute average *delta* chroma and timbre features instead of the ordinary average. Can you add delta-deltas, too? Can you use a visualisation to find any patterns in the data?
 
 ```{r}
 indie_deltas <-
