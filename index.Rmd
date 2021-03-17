@@ -29,7 +29,7 @@ You can access the lecture notes at the following links.
   - [Week 8 · Structure Analysis · Self-Similarity Matrices](./compmus2021-w08.html)
   - [Week 9 · Key and Chord Estimation](./compmus2021-w09.html)
   - [Week 10 · Novelty Functions and Tempograms](./compmus2021-w10.html)
-  - [Week 11 · Classification and Clustering](./compmus20201-w11.html)
+  - [Week 11 · Classification and Clustering](./compmus2021-w11.html)
 
 This storyboard contains further examples from each week to inspire you. You can download the raw source code of the storyboard [here](./index.Rmd).
 
